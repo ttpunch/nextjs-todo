@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import dbConnect from '@/lib/dbConnect';
 import User from '@/model/user'; // Assuming you have a User model
+import bcrypt from 'bcryptjs';
+
 
 export async function PATCH(request: Request, { params }: { params: { id: string } }) {
   const body = await request.json();
@@ -22,7 +24,7 @@ export async function PATCH(request: Request, { params }: { params: { id: string
     }
 
     // Hash the new password before saving it (make sure to import and use a proper hashing library, e.g., bcrypt)
-    const bcrypt = require('bcrypt');
+    
     const saltRounds = 10;
     const hashedPassword = await bcrypt.hash(newPassword, saltRounds);
 
