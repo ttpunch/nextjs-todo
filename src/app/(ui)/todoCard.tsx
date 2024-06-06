@@ -25,9 +25,9 @@ const TodoCard = ({ userid, id, title, description, startdate, enddate }: any) =
       <CardHeader className='px-6 py-4'>
         <h2 className='mb-2 text-xl font-bold'>{title}</h2>
       </CardHeader>
-      <CardHeader className="px-6 py-4">
+      {/* <CardHeader className="px-6 py-4">
         <h2 className="font-bold text-xl mb-2">{id}</h2>
-      </CardHeader>
+      </CardHeader> */}
       <CardContent className='px-6 py-4 text-justify text-wrap'>
         <p className='text-base text-gray-700'>{description}</p>
       </CardContent>
