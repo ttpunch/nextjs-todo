@@ -22,7 +22,7 @@ const Dashboard = () => {
       try {
         setLoading(true)  // Set loading to true before fetching data
         const response = await axios.post(
-          'http://localhost:3000/api/usertodos',
+          '/api/usertodos',
           { userId: session?.user?._id }
         )
         setTodos(response.data.todos)

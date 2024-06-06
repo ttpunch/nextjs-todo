@@ -89,7 +89,7 @@ const TodoForm = () => {
         }
         console.log(todoData)
 
-        const response = await axios.post('http://localhost:3000/api/postalltodos', todoData, {
+        const response = await axios.post('/api/postalltodos', todoData, {
           headers: {
             'Content-Type': 'application/json'
           }

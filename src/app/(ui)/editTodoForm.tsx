@@ -43,7 +43,7 @@ const EditForm = ({ id, user }:any) => {
         const fetchTodoData = async () => {
             try {
                 setIsLoading(true);
-                const response = await axios.get(`http://localhost:3000/api/gettodobyid/${id}`);
+                const response = await axios.get(`/api/gettodobyid/${id}`);
                 if (response.status === 200) {
                   const todoData = response.data.todo;
                   // Ensure dates are converted to Date objects

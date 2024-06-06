@@ -31,7 +31,7 @@ export default function DeleteConfirm({ id }: DeleteConfirmProps) {
       console.log(`Deleting todo with ID: ${id}`) // Informative logging
 
       const response = await axios.delete(
-        `http://localhost:3000/api/deletetodo/${id}`
+        `/api/deletetodo/${id}`
       )
 
       if (response.status === 200) {
