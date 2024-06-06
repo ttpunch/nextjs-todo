@@ -179,6 +179,7 @@ export default function SignUpForm() {
               Sign in
             </Link>
           </p>
+          
         </div>
       </div>
     </div>

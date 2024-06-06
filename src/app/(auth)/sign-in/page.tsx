@@ -103,6 +103,12 @@ export default function SignInForm() {
               Sign up
             </Link>
           </p>
+          <p>
+             Forgot Password ?          
+            <Link href="/password-reset" className='text-blue-600 hover:text-blue-800'>
+               click here
+            </Link>
+          </p>
         </div>
       </div>
     </div>
