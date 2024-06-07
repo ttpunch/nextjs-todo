@@ -7,6 +7,7 @@ import DeleteConfirm from './deleteConfirm'
 import { Button } from '@/components/ui/button'
 import EditForm from './editTodoForm'
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog'
+import TodoCardbyid from './todocardbyid'
 
 const formatDate = (dateStr: any) => {
   const date = new Date(dateStr)
@@ -21,18 +22,19 @@ const TodoCard = ({ userid, id, title, description, startdate, enddate }: any) =
 
   console.log(progress)
   return (
-    <Card className='max-w-sm overflow-hidden  rounded-lg bg-white shadow-lg md:w-auto'>
+    <Card className='max-w-sm overflow-hidden  rounded-lg bg-white shadow-lg md:w-auto '>
       <CardHeader className='px-6 py-4'>
         <h2 className='mb-2 text-xl font-bold'>{title}</h2>
       </CardHeader>
       {/* <CardHeader className="px-6 py-4">
         <h2 className="font-bold text-xl mb-2">{id}</h2>
       </CardHeader> */}
-      <CardContent className='px-6 py-4 text-justify text-wrap'>
-        <p className='text-base text-gray-700'>{description}</p>
+      <CardContent className='px-6 text-justify text-wrap '>
+        <p className='text-base text-gray-700  line-clamp-2 h-12'>{description}</p>
+        <TodoCardbyid id={id} title={title} description={description}/>
       </CardContent>
-      <CardFooter className='px-6 py-4'>
-        <div className='mt-4 flex gap-2'>
+      <CardFooter className='px-6'>
+        <div className=' flex gap-2'>
           <div className='text-sm text-gray-600'>
             <span className='font-semibold'>Start Date: </span>
             {formattedStartDate}
