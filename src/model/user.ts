@@ -7,6 +7,7 @@ export interface IUser extends Document {
   password: string;
   otp:string,
   otpExpiry:Date
+  isAcceptingReminder?: boolean
 }
 
 // User schema
@@ -35,6 +36,10 @@ const userSchema = new Schema<IUser>({
     type: Date,
     required: false,
   },
+  isAcceptingReminder: {
+    type:Boolean,
+    required:false
+  }
 });
 
 const  UserModal = models.User || model<IUser>('User', userSchema);

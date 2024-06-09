@@ -14,7 +14,14 @@ const formatDate = (dateStr: any) => {
   return date.toLocaleDateString('en-GB') // en-GB format is DD-MM-YYYY
 }
 
-const TodoCard = ({ userid, id, title, description, startdate, enddate }: any) => {
+const TodoCard = ({
+  userid,
+  id,
+  title,
+  description,
+  startdate,
+  enddate
+}: any) => {
   console.log(userid)
   const formattedStartDate = formatDate(startdate)
   const formattedEndDate = formatDate(enddate)
@@ -29,9 +36,12 @@ const TodoCard = ({ userid, id, title, description, startdate, enddate }: any) =
       {/* <CardHeader className="px-6 py-4">
         <h2 className="font-bold text-xl mb-2">{id}</h2>
       </CardHeader> */}
-      <CardContent className='px-6 text-justify text-wrap '>
-        <p className='text-base text-gray-700  line-clamp-2 h-12'>{description}</p>
-        <TodoCardbyid id={id} title={title} description={description}/>
+      <CardContent className='text-wrap px-6 text-justify '>
+        <p className='line-clamp-2 h-12  text-base text-gray-700'>
+          {description}
+        </p>
+
+        <TodoCardbyid id={id} title={title} description={description} />
       </CardContent>
       <CardFooter className='px-6'>
         <div className=' flex gap-2'>
@@ -44,19 +54,18 @@ const TodoCard = ({ userid, id, title, description, startdate, enddate }: any) =
             <span className='font-semibold'>End Date: </span>
             {formattedEndDate}
           </div>
-          
         </div>
       </CardFooter>
       <div className='mx-4 mb-2'>
         <Progress value={progress} />
         <Dialog>
           <DialogTrigger asChild>
-            <Button className='w-full mt-4' variant='default'>
+            <Button className='mt-4 w-full' variant='default'>
               Edit Todo
             </Button>
           </DialogTrigger>
           <DialogContent>
-            <EditForm id={id} user={userid}/>
+            <EditForm id={id} user={userid} />
           </DialogContent>
           <DeleteConfirm id={id} />
         </Dialog>

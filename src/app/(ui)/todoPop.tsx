@@ -9,7 +9,7 @@ import {
 
 const TodoPop = () => {
   return (
-    <div className='w-full'>
+    <div className='w-full stroke-white rounded-full'>
     <Dialog>
       <DialogTrigger asChild>
         <Button  className="rounded-full" variant="secondary">Add Todo</Button>

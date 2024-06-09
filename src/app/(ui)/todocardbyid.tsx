@@ -27,7 +27,7 @@ const formatDate = (dateStr: any) => {
 const TodoCardbyid = ({ title, description }: any) => {
   return (
     
-      <Drawer >
+      <Drawer  >
         <DrawerTrigger>
             <Button variant="link" className='max-w-min h-auto mt-2'>Read More</Button>
         </DrawerTrigger>
