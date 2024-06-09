@@ -4,7 +4,7 @@ import ReminderEmail from "../app/(ui)/reminderEmail";
 import { Resend } from 'resend';
 import { ReactElement } from 'react';
 
-const resend = new Resend("re_EMLsBoaR_NJBHbT1bXRfvU38Hr38C4f8b");
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 
 interface EmailParams {
