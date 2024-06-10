@@ -26,7 +26,13 @@ export async function middleware(request: NextRequest) {
   }
   /* if (!token && url.pathname.startsWith('/')){
     return NextResponse.redirect(new URL('/dashboard', request.url));
+
   } */
+
+    // Redirect to dashboard if accessing home page
+  if (url.pathname === '/') {
+    return NextResponse.redirect(new URL('/dashboard', request.url));
+  }
   return NextResponse.next();
 
   
