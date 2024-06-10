@@ -15,7 +15,7 @@ function Navbar() {
   const user: User = session?.user
 
   return (
-    <nav className='bg-[#2563eb] p-4 text-white shadow-lg md:p-6'>
+    <nav className='bg-primary p-4 text-white shadow-lg md:p-6'>
       <div className='container mx-auto flex flex-col items-center justify-between md:flex-row'>
         <div className='flex items-center justify-center gap-x-2'>
           <PackageCheck className='scale-125' />
