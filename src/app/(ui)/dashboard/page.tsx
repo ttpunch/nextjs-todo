@@ -1,12 +1,10 @@
 'use client'
 import { useEffect, useState } from 'react'
 import Navbar from '../Navbar'
-import TodoForm from '../todoAddForm'
 import TodoCard from '../todoCard'
 import { useDragControls } from 'framer-motion'
 import axios from 'axios'
 import { useSession } from 'next-auth/react'
-import DeleteConfirm from '../deleteConfirm'
 import { Loader2 } from 'lucide-react'
 
 const Dashboard = () => {

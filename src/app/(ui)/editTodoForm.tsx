@@ -82,7 +82,7 @@ const EditForm = ({ id, user }:any) => {
                 ...data,
                 user: session?.user?._id,
             };
-            const response = await axios.patch(`http://localhost:3000/api/edittodo/${id}`, todoData, {
+            const response = await axios.patch(`/api/edittodo/${id}`, todoData, {
                 headers: {
                     'Content-Type': 'application/json',
                 },
