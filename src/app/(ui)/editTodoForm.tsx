@@ -116,7 +116,7 @@ const EditForm = ({ id, user }:any) => {
                         <FormItem>
                             <FormLabel>Title</FormLabel>
                             <FormControl>
-                                <Input className="w-[450px] pl-3 text-left font-normal" {...field} />
+                                <Input className="md:w-[450px] pl-3 text-left font-normal w-[250px]" {...field} />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
@@ -130,7 +130,7 @@ const EditForm = ({ id, user }:any) => {
                         <FormItem>
                             <FormLabel>Todos</FormLabel>
                             <FormControl>
-                                <Textarea className="w-[450px] pl-3 text-left font-normal" {...field} />
+                                <Textarea className="md:w-[450px] pl-3 text-left font-normal w-[250px]" {...field} />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
@@ -150,7 +150,7 @@ const EditForm = ({ id, user }:any) => {
                                             <Button
                                                 variant={'outline'}
                                                 className={cn(
-                                                    'w-[220px] pl-3 text-left font-normal',
+                                                    'md:w-[220px] pl-3 text-left font-normal w-[120px] ',
                                                     !field.value && 'text-muted-foreground'
                                                 )}
                                             >
@@ -190,7 +190,7 @@ const EditForm = ({ id, user }:any) => {
                                             <Button
                                                 variant={'outline'}
                                                 className={cn(
-                                                    'w-[220px] pl-3 text-left font-normal',
+                                                    'md:w-[220px] pl-3 text-left font-normal w-[170px]',
                                                     !field.value && 'text-muted-foreground'
                                                 )}
                                             >
@@ -227,7 +227,7 @@ const EditForm = ({ id, user }:any) => {
                             <FormLabel>Background Color</FormLabel>
                             <FormControl>
                                 <Select onValueChange={field.onChange} value={field.value}>
-                                    <SelectTrigger className="w-[450px] pl-3 text-left font-normal">
+                                    <SelectTrigger className="md:w-[450px] pl-3 text-left font-normal w-[250px]">
                                         <SelectValue placeholder="Background Color" />
                                     </SelectTrigger>
                                     <SelectContent>
@@ -252,7 +252,7 @@ const EditForm = ({ id, user }:any) => {
                             <FormLabel>Status</FormLabel>
                             <FormControl>
                                 <Select onValueChange={field.onChange} value={field.value}>
-                                    <SelectTrigger className="w-[450px] pl-3 text-left font-normal">
+                                    <SelectTrigger className="md:w-[450px] pl-3 text-left font-normal w-[250px]">
                                         <SelectValue placeholder="Status" />
                                     </SelectTrigger>
                                     <SelectContent>
@@ -277,7 +277,7 @@ const EditForm = ({ id, user }:any) => {
                             <FormLabel>Importance</FormLabel>
                             <FormControl>
                                 <Select onValueChange={field.onChange} value={field.value}>
-                                    <SelectTrigger className="w-[450px] pl-3 text-left font-normal">
+                                    <SelectTrigger className="md:w-[450px] pl-3 text-left font-normal w-[250px]">
                                         <SelectValue placeholder="Importance" />
                                     </SelectTrigger>
                                     <SelectContent>

@@ -15,15 +15,17 @@ function Navbar() {
   const user: User = session?.user
 
   return (
-    <nav className='bg-primary p-4 text-white shadow-lg md:p-6'>
+    <nav className='bg-primary p-2 text-white shadow-lg md:p-6 '>
       <div className='container mx-auto flex flex-col items-center justify-between md:flex-row'>
         <div className='flex items-center justify-center gap-x-2'>
-          <PackageCheck className='scale-125' />
-          <a href='#' className='mb-4 text-3xl font-bold md:mb-0'>
+          <div>
+          <PackageCheck className='md:scale-125 scale-75 align-middle' />
+          </div>
+          <a href='#' className='mb-2 md:text-3xl font-bold md:mb-0 text-2xl text-center'>
             Todo Planner
           </a>
         </div>
-        <span className='relative'>
+        <span className='relative md:scale-100 scale-75'>
           <TodoPop />
         </span>
 
@@ -31,6 +33,7 @@ function Navbar() {
           <SwitchEmailReminder
             userid={session.user._id}
             email={session.user.email}
+            
           />
         ) : (
           <h1>No user</h1>
@@ -39,12 +42,12 @@ function Navbar() {
         <div>
           {session ? (
             <>
-              <span className='mr-4  italic'>
+              <span className='mr-4  italic hidden md:inline'>
                 Welcome, {user.username || user.email}
               </span>
               <Button
                 onClick={() => signOut()}
-                className='w-full rounded-full bg-slate-100 text-black md:w-auto'
+                className='w-full rounded-full bg-slate-100 text-black md:w-auto hidden md:inline'
                 variant='outline'
               >
                 Logout

@@ -74,7 +74,7 @@ const SwitchEmailReminder: React.FC<SwitchEmailReminderProps> = ({
   }
 
   return (
-    <div className='flex items-center justify-center'>
+    <div className='md:flex items-center justify-center hidden'>
       <Switch
         checked={acceptEmail}
         onCheckedChange={handleSwitchChange}

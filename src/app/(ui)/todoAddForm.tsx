@@ -143,7 +143,7 @@ const TodoForm = () => {
               <FormLabel>Title</FormLabel>
               <FormControl>
                 <Input
-                  className='w-[450px] pl-3 text-left font-normal'
+                  className='md:w-[450px] pl-3 text-left font-normal w-[250px]'
                   placeholder='Enter Title'
                   {...field}
                 />
@@ -161,7 +161,7 @@ const TodoForm = () => {
               <FormLabel>Todos</FormLabel>
               <FormControl>
                 <Textarea
-                  className='w-[450px] pl-3 text-left font-normal'
+                  className='md:w-[450px] pl-3 text-left font-normal w-[250px]'
                   placeholder='Enter todos'
                   {...field}
                 />
@@ -183,7 +183,7 @@ const TodoForm = () => {
                     <Button
                       variant={'outline'}
                       className={cn(
-                        'w-[220px] pl-3 text-left font-normal',
+                        'md:w-[220px] pl-3 text-left font-normal w-[120px]',
                         !field.value && 'text-muted-foreground'
                       )}
                     >
@@ -223,7 +223,7 @@ const TodoForm = () => {
                     <Button
                       variant={'outline'}
                       className={cn(
-                        'w-[220px] pl-3 text-left font-normal',
+                        'md:w-[220px] pl-3 text-left font-normal w-[170px]',
                         !field.value && 'text-muted-foreground'
                       )}
                     >
@@ -260,7 +260,7 @@ const TodoForm = () => {
               <FormLabel>Background Color</FormLabel>
               <FormControl>
                 <Select onValueChange={field.onChange} value={field.value}>
-                  <SelectTrigger className='w-[450px] pl-3 text-left font-normal'>
+                  <SelectTrigger className='md:w-[450px] pl-3 text-left font-normal w-[250px]'>
                     <SelectValue placeholder='Background Color' />
                   </SelectTrigger>
                   <SelectContent>
@@ -285,7 +285,7 @@ const TodoForm = () => {
               <FormLabel>Status</FormLabel>
               <FormControl>
                 <Select onValueChange={field.onChange} value={field.value}>
-                  <SelectTrigger className='w-[450px] pl-3 text-left font-normal'>
+                  <SelectTrigger className='md:w-[450px] pl-3 text-left font-normal w-[250px]'>
                     <SelectValue placeholder='Status' />
                   </SelectTrigger>
                   <SelectContent>
@@ -311,7 +311,7 @@ const TodoForm = () => {
               <FormLabel>Importance</FormLabel>
               <FormControl>
                 <Select onValueChange={field.onChange} value={field.value}>
-                  <SelectTrigger className='w-[450px] pl-3 text-left font-normal'>
+                  <SelectTrigger className='md:w-[450px] pl-3 text-left font-normal w-[250px]'>
                     <SelectValue placeholder='Importance' />
                   </SelectTrigger>
                   <SelectContent>

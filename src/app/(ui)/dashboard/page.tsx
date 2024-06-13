@@ -44,7 +44,7 @@ const Dashboard = () => {
   }
 
   return (
-    <section className='container mx-auto h-screen w-full'>
+    <section className='container mx-auto h-screen w-full '>
       <div className='fixed top-0 left-0 w-full z-50 bg-white shadow-md'>
         <Navbar />
       </div>
