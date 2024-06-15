@@ -53,8 +53,8 @@ const AllCompletedTasks = () => {
         {' '}
         {/* Tailwind classes for style */}
         {completedTodos.map((todo: any) => (
-          <li key={todo._id} className='list-item'>
-            {todo.title} {' '}
+          <li key={todo._id} className='list-item '>
+            <span className='italic underline underline-offset-2 decoration-primary'>{todo.title} {' '}</span>
             <span>
               task completed on{' '}
               {dayjs(todo.plannedDateOfCompletion).format('DD/MM/YYYY')}
