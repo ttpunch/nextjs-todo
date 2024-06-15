@@ -49,8 +49,8 @@ const Dashboard = () => {
       <div className='fixed left-0 top-0 z-50 w-full bg-white shadow-md'>
         <Navbar />
       </div>
-      <div className='grid md:grid-cols-[85%_15%] mt-16 h-screen grid-cols-1' >
-        <div className='mt-16'>
+      <div className='grid md:grid-cols-[85%_15%] mt-12 h-screen grid-cols-1' >
+        <div className='mt-12'>
            {/* Adjust padding to prevent content overlap */}
           {session?.user?._id ? (
             loading ? (
@@ -88,7 +88,7 @@ const Dashboard = () => {
             </div>
           )}
         </div>
-        <div className='mt-16 pt-2'>
+        <div className='mt-12 pt-2 capitalize'>
           <AllCompletedTasks/>
         </div>
       </div>
