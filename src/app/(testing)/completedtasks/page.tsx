@@ -47,7 +47,7 @@ const AllCompletedTasks = () => {
   }
 
   return (
-    <div className='p-2 h-full '>
+    <div className='p-2'>
       <h2><b>Completed Tasks</b></h2>
       <ul className='list list-disc pl-6'>
         {' '}

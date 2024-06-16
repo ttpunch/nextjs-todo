@@ -45,11 +45,11 @@ const Dashboard = () => {
   }
 
   return (
-    <section className='container mx-auto h-screen w-full '>
-      <div className='fixed left-0 top-0 z-50 w-full bg-white shadow-md'>
+    <section className='container mx-auto w-full'>
+      <div className='fixed left-0 top-0 z-50 w-full  bg-white shadow-md'>
         <Navbar />
       </div>
-      <div className='grid md:grid-cols-[85%_15%] mt-12 h-screen grid-cols-1' >
+      <div className='grid md:grid-cols-[85%_15%] mt-12 grid-cols-1 relative h-full items-start' >
         <div className='mt-12'>
            {/* Adjust padding to prevent content overlap */}
           {session?.user?._id ? (
@@ -88,7 +88,7 @@ const Dashboard = () => {
             </div>
           )}
         </div>
-        <div className='mt-12 pt-2 capitalize'>
+        <div className='mt-12 pt-2 capitalize sticky top-20'>
           <AllCompletedTasks/>
         </div>
       </div>
