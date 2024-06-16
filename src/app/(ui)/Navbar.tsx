@@ -9,6 +9,7 @@ import TodoPop from './todoPop'
 import { PackageCheck } from 'lucide-react'
 import SwitchEmailReminder from './emailReminderSwitch'
 
+
 function Navbar() {
   const { data: session } = useSession()
   //console.log(session)
@@ -24,6 +25,7 @@ function Navbar() {
           <a href='#' className='mb-2 md:text-3xl font-bold md:mb-0 text-2xl text-center'>
             Todo Planner
           </a>
+         
         </div>
         <span className='relative md:scale-100 scale-75'>
           <TodoPop />

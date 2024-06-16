@@ -7,6 +7,7 @@ import axios from 'axios'
 import { useSession } from 'next-auth/react'
 import { Loader2 } from 'lucide-react'
 import AllCompletedTasks from '@/app/(testing)/completedtasks/page'
+import{motion} from 'framer-motion'
 
 
 const Dashboard = () => {
@@ -62,7 +63,9 @@ const Dashboard = () => {
               <div className='flex flex-wrap justify-start '>
                 {todos.length > 0 ? (
                   todos.map((data: any) => (
-                    <div key={data._id} className='m-4' >
+                    <motion.div key={data._id} className='m-4'
+                       whileHover={{ scale: 1.05,opacity: 1 }}
+                      >
                       <TodoCard
                         userid={sessionuser}
                         id={data._id}
@@ -71,7 +74,7 @@ const Dashboard = () => {
                         startdate={data.startDate}
                         enddate={data.plannedDateOfCompletion}
                       />
-                    </div>
+                    </motion.div>
                   ))
                 ) : (
                   <p className='text-center text-gray-500'>
