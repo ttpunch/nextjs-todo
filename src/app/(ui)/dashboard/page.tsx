@@ -8,6 +8,7 @@ import { useSession } from 'next-auth/react'
 import { Loader2 } from 'lucide-react'
 import AllCompletedTasks from '@/app/(testing)/completedtasks/page'
 import{motion} from 'framer-motion'
+import { Button } from '@/components/ui/button'
 
 
 const Dashboard = () => {
@@ -46,11 +47,11 @@ const Dashboard = () => {
   }
 
   return (
-    <section className='container mx-auto w-full'>
+    <section className='container mx-auto h-screen w-full relative'>
       <div className='fixed left-0 top-0 z-50 w-full  bg-white shadow-md'>
         <Navbar />
       </div>
-      <div className='grid md:grid-cols-[85%_15%] mt-12 grid-cols-1 relative h-full items-start' >
+      <div className='grid md:grid-cols-[85%_15%] mt-12 grid-cols-1 relative h-screen items-start' >
         <div className='mt-12'>
            {/* Adjust padding to prevent content overlap */}
           {session?.user?._id ? (
@@ -91,10 +92,15 @@ const Dashboard = () => {
             </div>
           )}
         </div>
-        <div className='mt-12 pt-2 capitalize sticky top-20'>
+        <div className='mt-12 pt-2 capitalize sticky top-20 max-h-lg'>
           <AllCompletedTasks/>
+         
         </div>
+        
       </div>
+      {todos.length > 0 && (
+        <Button className='fixed 2xl:bottom-8 2xl:right-72 bottom-2 right-8'>Save Completed Tasks</Button>
+      )}
     </section>
   )
 }
