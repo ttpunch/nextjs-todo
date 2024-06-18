@@ -29,7 +29,7 @@ const TodoCard = ({
 
   console.log(progress)
   return (
-    <Card className='max-w-[316px] overflow-hidden  rounded-lg bg-white shadow-lg md:w-auto md:scale-100 scale-90 '>
+    <Card className='max-w-[316px] scale-90  overflow-hidden rounded-lg bg-white shadow-lg md:w-auto md:scale-100 '>
       <CardHeader className='px-6 py-4'>
         <h2 className='mb-2 text-xl font-bold'>{title}</h2>
       </CardHeader>
@@ -57,7 +57,11 @@ const TodoCard = ({
         </div>
       </CardFooter>
       <div className='mx-4 mb-2'>
-        <Progress value={progress} />
+        {progress >= 100 ? (
+          <Progress value={progress}  />
+        ) : (
+          <Progress value={progress} />
+        )}
         <Dialog>
           <DialogTrigger asChild>
             <Button className='mt-4 w-full' variant='default'>
