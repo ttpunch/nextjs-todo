@@ -118,36 +118,33 @@ const Dashboard = () => {
             </div>
           )}
         </div>
-        <div className='max-h-lg sticky top-20 mt-12 pt-2 capitalize'>
-          <AllCompletedTasks />
-        </div>
-      </div>
-      <div >
-        <Dialog >
-          <DialogTrigger asChild>
+        <div className='sticky top-20 flex flex-col justify-between space-y-4'>
+          <div className='max-h-lg sticky top-20 mt-10 pt-2 capitalize'>
+            <AllCompletedTasks />
+          </div>
+          <div>
+            <Dialog>
+              <DialogTrigger asChild>
+                {todos.length > 0 && (
+                  <Button onClick={showSaveAllCompleteTask}>
+                    All Completed Tasks
+                  </Button>
+                )}
+              </DialogTrigger>
+              <DialogContent className='flex max-w-lg justify-center p-1'>
+                <CompletedTaskCarousel data={savedcompletedTasks} />
+              </DialogContent>
+            </Dialog>
+          </div>
+          <div>
             {todos.length > 0 && (
-              <Button
-                onClick={showSaveAllCompleteTask}
-                className='fixed bottom-16 right-8 2xl:bottom-24 2xl:right-80'
-              >
-                All Completed Tasks
+              <Button onClick={handleSaveAllCompleteTask}>
+                Save Completed Tasks
               </Button>
             )}
-          </DialogTrigger>
-          <DialogContent className='flex justify-center max-w-lg p-1'>
-            <CompletedTaskCarousel data={savedcompletedTasks} />
-          </DialogContent>
-        </Dialog>
+          </div>
+        </div>
       </div>
-
-      {todos.length > 0 && (
-        <Button
-          onClick={handleSaveAllCompleteTask}
-          className='fixed bottom-2 right-8 2xl:bottom-8 2xl:right-80'
-        >
-          Save Completed Tasks
-        </Button>
-      )}
     </section>
   )
 }
