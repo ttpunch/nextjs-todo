@@ -71,7 +71,7 @@ const Dashboard = () => {
     }
   }
   return (
-    <section className='container relative mx-auto h-screen w-full'>
+    <section className='container relative mx-auto h-screen w-full scrollbar scrollbar-thumb-sky-700 scrollbar-track-sky-300'>
       <div className='fixed left-0 top-0 z-50 w-full  bg-white shadow-md'>
         <Navbar />
       </div>
@@ -119,7 +119,7 @@ const Dashboard = () => {
           )}
         </div>
         <div className='sticky top-20 flex flex-col justify-between space-y-4'>
-          <div className='max-h-lg sticky top-20 mt-10 pt-2 capitalize'>
+          <div className='max-h-xl overflow-y-auto sticky top-20 mt-10 pt-2 capitalize'>
             <AllCompletedTasks />
           </div>
           <div>

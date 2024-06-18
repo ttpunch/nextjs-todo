@@ -25,7 +25,7 @@ const CompletedTaskCarousel = ({ data }: any) => {
             <Card className='max-w-max overflow-hidden  rounded-lg bg-white shadow-lg md:w-auto md:scale-100 scale-90 '>
             <CardHeader>
               <CardTitle>Title: {""}{todo.title}</CardTitle>
-              <CardContent className='text-wrap'>Desscription:{""}{todo.todos}</CardContent>
+              <CardContent className='text-wrap'>Description:{""}{todo.todos}</CardContent>
               <CardContent>Completion Date:{""}{new Date(todo.plannedDateOfCompletion).toLocaleDateString()}</CardContent>
             </CardHeader>
             </Card>

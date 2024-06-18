@@ -18,7 +18,7 @@ interface RootLayoutProps {
 export default async function RootLayout({ children }: RootLayoutProps) {
   return (
     <AuthProvider>
-      <html lang='en' className='scroll-smooth'>
+      <html lang='en' className='scroll-smooth scrollbar-thin scrollbar-thumb-primary scrollbar-track-white'>
         <body className={inter.className}>
           {children}
           <Toaster />
