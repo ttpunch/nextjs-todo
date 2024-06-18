@@ -1,7 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react'
 import { useSession } from 'next-auth/react'
-import { getCompletedTodos } from '../../_actions'
+import { saveCompletedTasks,getCompletedTodos} from '../../_actions'
 import dayjs from 'dayjs'
 
 const AllCompletedTasks = () => {
@@ -9,18 +9,18 @@ const AllCompletedTasks = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState(null)
   const { data: session } = useSession()
-
-  useEffect(() => {
+ 
+ useEffect(() => {
     const fetchCompletedTodos = async () => {
       setIsLoading(true)
       setError(null)
 
       try {
-        if (!session?.user) {
+        if (!session?.user._id) {
           throw new Error('Unauthorized: User not logged in')
         }
 
-        const completedTodos: any = await getCompletedTodos(session.user._id)
+        const completedTodos: any = await getCompletedTodos(session?.user._id)
         console.log(completedTodos)
         setCompletedTodos(completedTodos)
       } catch (error: any) {
@@ -38,10 +38,7 @@ const AllCompletedTasks = () => {
     return <p className='pt-2'>Loading completed tasks...</p>
   }
 
-  if (error) {
-    return <p>Error: {error}</p>
-  }
-
+  
   if (completedTodos.length === 0) {
     return <p>You dont have any completed tasks yet.</p>
   }
