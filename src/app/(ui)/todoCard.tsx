@@ -20,12 +20,14 @@ const TodoCard = ({
   title,
   description,
   startdate,
-  enddate
+  enddate,
+  backgroundColor
 }: any) => {
   console.log(userid)
   const formattedStartDate = formatDate(startdate)
   const formattedEndDate = formatDate(enddate)
   const progress = calculateProgress(startdate, enddate)
+  console.log(backgroundColor)
 
   console.log(progress)
   return (
@@ -41,7 +43,7 @@ const TodoCard = ({
           {description}
         </p>
 
-        <TodoCardbyid id={id} title={title} description={description} />
+        <TodoCardbyid id={id} title={title} description={description} bgColor={backgroundColor}/>
       </CardContent>
       <CardFooter className='px-6'>
         <div className=' flex gap-2'>

@@ -4,7 +4,7 @@ import Navbar from '../Navbar'
 import TodoCard from '../todoCard'
 import axios from 'axios'
 import { useSession } from 'next-auth/react'
-import { CircleGauge, Loader2 } from 'lucide-react'
+import {Loader2 } from 'lucide-react'
 import AllCompletedTasks from '@/app/(testing)/completedtasks/page'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
@@ -14,9 +14,6 @@ import CompletedTaskCarousel from '../completedTaskCarusal'
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
   DialogTrigger
 } from '@/components/ui/dialog'
 
@@ -72,15 +69,15 @@ const Dashboard = () => {
   }
   return (
     <section className='container relative mx-auto h-screen w-full scrollbar scrollbar-thumb-sky-700 scrollbar-track-sky-300'>
-      <div className='fixed left-0 top-0 z-50 w-full  bg-white shadow-md'>
+      <nav className='fixed left-0 top-0 z-50 w-full  bg-white shadow-md'>
         <Navbar />
-      </div>
+      </nav>
       <div className='relative mt-12 grid h-screen grid-cols-1 items-start md:grid-cols-[85%_15%]'>
         <div className='mt-12'>
           {/* Adjust padding to prevent content overlap */}
           {session?.user?._id ? (
             loading ? (
-              <div className='flex h-full items-center justify-center'>
+              <div className='flex h-screen w-screen items-center justify-center overscroll-x-none'>
                 <Loader2 className='h-10 w-10 animate-spin' />
                 <h1 className='ml-4 text-black'>Loading....</h1>
               </div>
@@ -100,6 +97,7 @@ const Dashboard = () => {
                         description={data.todos}
                         startdate={data.startDate}
                         enddate={data.plannedDateOfCompletion}
+                        backgroundColor={data.backgroundColor}
                       />
                     </motion.div>
                   ))
@@ -118,11 +116,11 @@ const Dashboard = () => {
             </div>
           )}
         </div>
-        <div className='sticky top-20 flex flex-col justify-between space-y-4'>
+        <div className='sticky top-20 flex flex-col md:justify-between space-y-4'>
           <div className='max-h-xl overflow-y-auto sticky top-20 mt-10 pt-2 capitalize'>
-            <AllCompletedTasks />
+           {!loading && session ?<AllCompletedTasks />:null} 
           </div>
-          <div>
+          <div className='flex justify-center'>
             <Dialog>
               <DialogTrigger asChild>
                 {todos.length > 0 && (
@@ -136,8 +134,8 @@ const Dashboard = () => {
               </DialogContent>
             </Dialog>
           </div>
-          <div>
-            {todos.length > 0 && (
+          <div className='flex justify-center'>
+            {((todos.length) > 0)&&!loading && (
               <Button onClick={handleSaveAllCompleteTask}>
                 Save Completed Tasks
               </Button>

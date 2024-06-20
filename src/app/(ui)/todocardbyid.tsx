@@ -7,6 +7,7 @@ import DeleteConfirm from './deleteConfirm'
 import { Button } from '@/components/ui/button'
 import EditForm from './editTodoForm'
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog'
+import { cn } from "@/lib/utils";
 
 import {
   Drawer,
@@ -23,19 +24,33 @@ const formatDate = (dateStr: any) => {
   const date = new Date(dateStr)
   return date.toLocaleDateString('en-GB') // en-GB format is DD-MM-YYYY
 }
-
-const TodoCardbyid = ({ title, description }: any) => {
+type BgColor = "Red" | "Orange" | "Green" | "Default";
+const TodoCardbyid = ({ bgColor,id,title, description }: any) => {
+  
+  const getBackgroundColorClass = (bgColor:BgColor) => {
+    switch (bgColor) {
+      case "Red":
+        return "bg-red-200";
+      case "Orange":
+        return "bg-orange-200";
+      case "Green":
+        return "bg-green-200";
+      default:
+        return "bg-white";
+    }
+  };
+  console.log(bgColor)
   return (
     
-      <Drawer  >
+      <Drawer >
         <DrawerTrigger>
-            <Button variant="link" className='max-w-min h-auto mt-2'>Read More</Button>
+            <Button variant="link" className='max-w-min h-auto mt-2'>Read More...</Button>
         </DrawerTrigger>
         <DrawerContent>
           <DrawerHeader>
             <DrawerTitle>Todo Details</DrawerTitle>
             
-            <Card className='max-w-sm overflow-hidden  rounded-lg bg-white shadow-lg md:w-auto'>
+            <Card className={cn("max-w-xl overflow-hidden rounded-lg shadow-lg md:w-auto",getBackgroundColorClass (bgColor))}>
               <CardHeader className='px-6 py-4'>
                 <h2 className='mb-2 text-xl font-bold'>{title}</h2>
               </CardHeader>
