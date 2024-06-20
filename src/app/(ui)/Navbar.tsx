@@ -23,7 +23,7 @@ function Navbar() {
           <PackageCheck className='md:scale-125 scale-75 align-middle' />
           </div>
           <a href='#' className='mb-2 md:text-3xl font-bold md:mb-0 text-2xl text-center'>
-            Todo Planner
+            Todo Planner<span className='text-xs align-top'>Beta</span>
           </a>
          
         </div>
