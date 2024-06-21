@@ -9,7 +9,7 @@ import { z } from 'zod'
 import { todoSchema } from '@/schemas/todoSchema'
 import { useSession } from 'next-auth/react'
 import { Button } from '@/components/ui/button'
-import { format } from 'date-fns'
+import { format, getDate } from 'date-fns'
 import { Calendar } from '@/components/ui/calendar'
 import { CalendarIcon } from '@radix-ui/react-icons'
 import {
@@ -201,7 +201,7 @@ const TodoForm = () => {
                     mode='single'
                     selected={field.value}
                     onSelect={field.onChange}
-                    disabled={date => date < new Date('1900-01-01')}
+                    disabled={date => date.getTime() < new Date().setHours(0, 0, 0, 0)}
                     initialFocus
                   />
                 </PopoverContent>
@@ -241,7 +241,7 @@ const TodoForm = () => {
                     mode='single'
                     selected={field.value}
                     onSelect={field.onChange}
-                    disabled={date => date < new Date('1900-01-01')}
+                    disabled={date => date.getTime() < new Date().setHours(0, 0, 0, 0)}
                     initialFocus
                   />
                 </PopoverContent>
